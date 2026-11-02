@@ -21,6 +21,8 @@ export default function ManifestoSection({
   );
 
   useEffect(() => {
+    // Interpolates smoothly from soft pastel blue-grey #B8C4E6 (184, 196, 230)
+    // to Standout Royal Blue #1A3AA3 (26, 58, 163) on a dominant white canvas
     const applyWordFill = (progress: number): void => {
       const total = words.length;
       const softEdge = 3;
@@ -30,8 +32,10 @@ export default function ManifestoSection({
         const span = wordRefs.current[i];
         if (!span) continue;
         const wordFill = Math.max(0, Math.min(1, (scaled - i) / softEdge));
-        const channel = Math.round(111 + wordFill * (244 - 111));
-        span.style.color = `rgb(${channel}, ${channel}, ${channel})`;
+        const r = Math.round(184 + wordFill * (26 - 184));
+        const g = Math.round(196 + wordFill * (58 - 196));
+        const b = Math.round(230 + wordFill * (163 - 230));
+        span.style.color = `rgb(${r}, ${g}, ${b})`;
       }
     };
 
@@ -62,7 +66,7 @@ export default function ManifestoSection({
       if (el) {
         const rect = el.getBoundingClientRect();
         const vh = window.innerHeight;
-        const startPoint = vh * 0.8;
+        const startPoint = vh * 0.82;
         const endPoint = vh * 0.2;
         const targetProgress = Math.max(
           0,
@@ -80,7 +84,7 @@ export default function ManifestoSection({
 
   return (
     <>
-      {/* 111u Black Bar */}
+      {/* 111u Transition Bar */}
       <div className="meta-bar" id="manifesto">
         <div className="meta-bar-left">
           BERDIRI{" "}
