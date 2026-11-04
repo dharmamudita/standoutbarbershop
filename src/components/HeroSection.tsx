@@ -10,6 +10,7 @@ import {
 } from "@/data/barberData";
 import { PartnerGlyphType } from "@/types/barber";
 import { useCountUp, useWibStatus } from "@/utils/motion";
+import StandoutLogo from "@/components/StandoutLogo";
 
 interface HeroSectionProps {
   onOpenBooking: (preselectedService?: string) => void;
@@ -345,8 +346,17 @@ export default function HeroSection({
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
-        {/* 1. Top Bar: Segmented Pill Nav on Left, Date + Contact CTA on Right */}
+        {/* 1. Top Bar: Brand Logo on Left, Segmented Nav, Date + Contact CTA on Right */}
         <header className="hero-top-bar">
+          <div className="hero-brand-wrap hero-stagger">
+            <div className="hidden sm:block">
+              <StandoutLogo variant="horizontal" size={40} withLink />
+            </div>
+            <div className="block sm:hidden">
+              <StandoutLogo variant="emblem" size={36} withLink />
+            </div>
+          </div>
+
           <nav
             ref={navRef}
             className="hero-nav"
@@ -419,19 +429,7 @@ export default function HeroSection({
 
           <div ref={brandPlateRef} className="brand-plate hero-stagger">
             <div className="brand-plate-mark">
-              <svg
-                viewBox="0 0 28 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <path d="M2 22L12.5 2L17.5 11.5L2 22Z" fill="white" />
-                <path
-                  d="M14.5 14L26 2L22.5 22L14.5 14Z"
-                  fill="white"
-                  fillOpacity="0.72"
-                />
-              </svg>
+              <StandoutLogo variant="emblem" theme="white" size={32} />
             </div>
             <span className="brand-plate-name">{STUDIO_META.shortName}</span>
             <div className="brand-plate-menu" aria-hidden="true">

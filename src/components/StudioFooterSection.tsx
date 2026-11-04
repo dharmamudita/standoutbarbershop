@@ -3,6 +3,7 @@
 import React from "react";
 import { STUDIO_HOURS, STUDIO_META } from "@/data/barberData";
 import { useWibStatus } from "@/utils/motion";
+import StandoutLogo from "@/components/StandoutLogo";
 
 interface StudioFooterSectionProps {
   onOpenBooking: () => void;
@@ -24,15 +25,18 @@ export default function StudioFooterSection({
         <div className="studio-info-panel">
           <div>
             <div className="studio-badge-row">
-              <span className="studio-pill">
-                <span
-                  className="live-dot"
-                  style={{
-                    backgroundColor: wibStatus.isOpen ? "#4ade80" : "#f59e0b",
-                  }}
-                />
-                <span>{wibStatus.statusLabel}</span>
-              </span>
+              <div className="flex items-center gap-3">
+                <StandoutLogo variant="emblem" theme="white" size={32} />
+                <span className="studio-pill">
+                  <span
+                    className="live-dot"
+                    style={{
+                      backgroundColor: wibStatus.isOpen ? "#4ade80" : "#f59e0b",
+                    }}
+                  />
+                  <span>{wibStatus.statusLabel}</span>
+                </span>
+              </div>
               <a
                 href={STUDIO_META.instagramUrl}
                 target="_blank"
@@ -104,7 +108,7 @@ export default function StudioFooterSection({
       </div>
 
       <div className="footer-bottom-bar">
-        <span className="footer-brand-word">{STUDIO_META.brandName}</span>
+        <StandoutLogo variant="horizontal" size={38} withLink />
         <span>
           Ruko Bukit Indah Golf Blok F9 · {STUDIO_META.cityFull}
         </span>

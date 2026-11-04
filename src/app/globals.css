@@ -135,6 +135,12 @@ img {
   width: 100%;
 }
 
+.hero-brand-wrap {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .hero-nav {
   position: relative;
   height: calc(48 * var(--u));
@@ -1897,13 +1903,27 @@ img {
   .hero-top-bar {
     order: 1;
     width: 100%;
-    gap: calc(10 * var(--u));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: calc(8 * var(--u));
+  }
+
+  .hero-brand-wrap {
+    flex-shrink: 0;
   }
 
   .hero-nav {
     height: calc(42 * var(--u));
     padding: calc(3.5 * var(--u));
-    max-width: calc(100% - 50 * var(--u));
+    flex: 1;
+    max-width: none;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .hero-nav::-webkit-scrollbar {
+    display: none;
   }
 
   .nav-pill-indicator {

@@ -7,6 +7,7 @@ import {
   STUDIO_META,
 } from "@/data/barberData";
 import { buildWhatsAppBookingUrl } from "@/utils/motion";
+import StandoutLogo from "@/components/StandoutLogo";
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -70,14 +71,17 @@ export default function BookingModal({
     >
       <div className="booking-modal">
         <div className="modal-header">
-          <div>
-            <h3 className="modal-title" id="modalTitle">
-              Reservasi Kursi Anda
-            </h3>
-            <p className="modal-subtitle">
-              Standout Barbershop · {STUDIO_META.district},{" "}
-              {STUDIO_META.cityFull}
-            </p>
+          <div className="flex items-center gap-3.5">
+            <StandoutLogo variant="emblem" size={44} />
+            <div>
+              <h3 className="modal-title" id="modalTitle">
+                Reservasi Kursi Anda
+              </h3>
+              <p className="modal-subtitle">
+                Standout Barbershop · {STUDIO_META.district},{" "}
+                {STUDIO_META.cityFull}
+              </p>
+            </div>
           </div>
           <button
             type="button"
