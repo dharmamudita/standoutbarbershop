@@ -133,18 +133,8 @@ icon_192.save("public/icon-192.png", "PNG")
 
 apple_icon = create_square_icon(180, bg_type="white")
 apple_icon.save("public/apple-touch-icon.png", "PNG")
-apple_icon.save("src/app/apple-icon.png", "PNG")
-
-favicon_48 = create_square_icon(48, bg_type="white")
-favicon_32 = create_square_icon(32, bg_type="white")
-favicon_32.save("public/favicon-32x32.png", "PNG")
-
-favicon_16 = create_square_icon(16, bg_type="white")
-favicon_16.save("public/favicon-16x16.png", "PNG")
-
 # Multi-resolution ICO file
 icon_512.save("public/favicon.ico", format="ICO", sizes=[(16, 16), (32, 32), (48, 48)])
-icon_512.save("src/app/favicon.ico", format="ICO", sizes=[(16, 16), (32, 32), (48, 48)])
 print("Saved favicon.ico, favicon-16x16.png, favicon-32x32.png, apple-touch-icon.png, icon-192.png, icon-512.png")
 
 # 6. Generate Vector SVG icon with embedded high-resolution base64 PNG
@@ -165,9 +155,7 @@ svg_official_icon = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512
 
 with open("public/icon.svg", "w", encoding="utf-8") as f:
     f.write(svg_official_icon)
-with open("src/app/icon.svg", "w", encoding="utf-8") as f:
-    f.write(svg_official_icon)
-print("Saved public/icon.svg and src/app/icon.svg with official logo")
+print("Saved public/icon.svg with official logo")
 
 # 7. Generate Rich OpenGraph Image (1200x630) for Social Media & Google Search Result Snippets
 og = Image.new("RGBA", (1200, 630), (255, 255, 255, 255))

@@ -2058,25 +2058,51 @@ img {
   }
 
   .brand-plate {
-    top: 52%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: calc(100% - 32 * var(--u));
-    max-width: calc(320 * var(--u));
-    height: calc(62 * var(--u));
-    padding: 0 calc(18 * var(--u));
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    width: calc(100% - 44 * var(--u));
+    max-width: calc(280 * var(--u));
+    height: calc(52 * var(--u));
+    padding: 0 calc(16 * var(--u));
+    border-radius: calc(10 * var(--u));
+    background: rgba(26, 58, 163, 0.88);
+    backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 calc(12 * var(--u)) calc(30 * var(--u)) rgba(18, 40, 115, 0.35);
     z-index: 6;
   }
 
   .brand-plate-name {
-    font-size: calc(20 * var(--u));
+    font-size: calc(16 * var(--u));
+    letter-spacing: 0.05em;
   }
 
   .jacket-wordmarks {
-    bottom: calc(18 * var(--u));
-    font-size: calc(12.5 * var(--u));
-    gap: calc(18 * var(--u));
+    bottom: calc(14 * var(--u));
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: max-content;
+    transform: none;
+    font-size: calc(11 * var(--u));
+    letter-spacing: 0.06em;
+    gap: calc(10 * var(--u));
+    padding: calc(4 * var(--u)) calc(14 * var(--u));
+    background: rgba(18, 40, 115, 0.55);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: calc(999 * var(--u));
     z-index: 6;
+    text-shadow: none;
+  }
+
+  .jacket-wordmarks .wm-sep {
+    width: calc(3 * var(--u));
+    height: calc(3 * var(--u));
+    opacity: 0.7;
   }
 
   /* ORDER 4: Status Strip (Presisi Terbaik Pill + Kami Siap Melayani Anda) */
@@ -2824,68 +2850,94 @@ img {
   color: #ffffff;
 }
 
-/* Bottom Caption Bar inside Hallway Stage */
-.hallway-stage-caption {
-  position: absolute;
-  left: calc(18 * var(--u));
-  right: calc(18 * var(--u));
-  bottom: calc(18 * var(--u));
-  background: rgba(18, 40, 115, 0.86);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.26);
-  border-radius: calc(10 * var(--u));
-  padding: calc(16 * var(--u)) calc(22 * var(--u));
+/* Active Style Info Card (Below Hallway Viewport) */
+.hallway-style-card {
+  margin-top: calc(20 * var(--u));
+  background: linear-gradient(
+    145deg,
+    var(--brand-blue) 0%,
+    var(--brand-blue-deep) 100%
+  );
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: calc(14 * var(--u));
+  padding: calc(22 * var(--u)) calc(28 * var(--u));
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: calc(20 * var(--u));
-  z-index: 7;
+  gap: calc(24 * var(--u));
+  box-shadow: 0 calc(16 * var(--u)) calc(40 * var(--u)) rgba(26, 58, 163, 0.16);
 }
 
-.stage-code-pill {
+.style-card-left {
+  display: flex;
+  flex-direction: column;
+  gap: calc(4 * var(--u));
+}
+
+.style-card-meta {
+  display: flex;
+  align-items: center;
+  gap: calc(12 * var(--u));
+}
+
+.style-archive-pill {
   font-family: "Archivo", sans-serif;
   font-variation-settings:
     "wdth" 115,
     "wght" 600;
-  font-size: calc(10.5 * var(--u));
-  letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.72);
-  display: block;
-  margin-bottom: calc(4 * var(--u));
+  font-size: calc(11 * var(--u));
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  padding: calc(3 * var(--u)) calc(9 * var(--u));
+  border-radius: calc(999 * var(--u));
 }
 
-.stage-style-title {
-  font-size: calc(22 * var(--u));
+.style-spec-tag {
+  font-family: "Archivo", sans-serif;
+  font-size: calc(11.5 * var(--u));
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.style-card-title {
+  font-size: calc(24 * var(--u));
   font-weight: 600;
   letter-spacing: -0.02em;
   color: #ffffff;
+  margin-top: calc(4 * var(--u));
 }
 
-.stage-style-desc {
-  font-size: calc(13 * var(--u));
-  color: rgba(255, 255, 255, 0.82);
-  margin-top: calc(2 * var(--u));
+.style-card-desc {
+  font-size: calc(14 * var(--u));
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.45;
+  max-width: calc(640 * var(--u));
 }
 
-.stage-book-btn {
-  height: calc(42 * var(--u));
-  padding: 0 calc(20 * var(--u));
+.style-book-cta {
+  height: calc(46 * var(--u));
+  padding: 0 calc(24 * var(--u));
   background: #ffffff;
   color: var(--brand-blue);
   border-radius: calc(999 * var(--u));
   display: inline-flex;
   align-items: center;
   gap: calc(8 * var(--u));
-  font-size: calc(13 * var(--u));
+  font-size: calc(14 * var(--u));
   font-weight: 600;
   white-space: nowrap;
   flex-shrink: 0;
-  transition: transform 0.35s var(--ease-out-expo);
+  box-shadow: 0 calc(8 * var(--u)) calc(20 * var(--u)) rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.35s var(--ease-out-expo),
+    box-shadow 0.35s var(--ease-out-expo);
 }
 
-.stage-book-btn:hover {
+.style-book-cta:hover {
   transform: translateY(-2px);
+  box-shadow: 0 calc(12 * var(--u)) calc(28 * var(--u)) rgba(0, 0, 0, 0.25);
 }
 
 /* 4 Interactive Corridor Selector Cards */
@@ -3148,11 +3200,11 @@ img {
     flex-direction: column;
     align-items: flex-start;
     gap: calc(12 * var(--u));
-    margin-bottom: calc(28 * var(--u));
+    margin-bottom: calc(20 * var(--u));
   }
 
   .hallway-viewport {
-    height: calc(440 * var(--u));
+    height: calc(360 * var(--u));
     border-radius: calc(14 * var(--u));
   }
 
@@ -3161,52 +3213,88 @@ img {
   }
 
   .hallway-core-stage {
-    inset: calc(10 * var(--u));
+    inset: calc(6 * var(--u));
+    border-radius: calc(10 * var(--u));
   }
 
   .split-corner-badge {
-    padding: calc(5 * var(--u)) calc(8 * var(--u));
+    padding: calc(4 * var(--u)) calc(8 * var(--u));
     font-size: calc(8.5 * var(--u));
+    border-radius: calc(999 * var(--u));
+    gap: 0;
   }
 
   .split-corner-badge strong {
-    font-size: calc(10 * var(--u));
+    font-size: calc(9.5 * var(--u));
   }
 
-  .hallway-stage-caption {
+  .badge-left {
+    left: calc(8 * var(--u));
+    top: calc(8 * var(--u));
+  }
+
+  .badge-right {
+    right: calc(8 * var(--u));
+    top: calc(8 * var(--u));
+  }
+
+  .split-divider-handle {
+    width: calc(38 * var(--u));
+    height: calc(38 * var(--u));
+    font-size: calc(13 * var(--u));
+  }
+
+  .split-coord-readout {
+    font-size: calc(8.5 * var(--u));
+    padding: calc(2 * var(--u)) calc(7 * var(--u));
+  }
+
+  /* Style Card below canvas */
+  .hallway-style-card {
+    margin-top: calc(12 * var(--u));
+    padding: calc(16 * var(--u));
+    border-radius: calc(12 * var(--u));
     flex-direction: column;
     align-items: flex-start;
     gap: calc(12 * var(--u));
-    padding: calc(14 * var(--u));
   }
 
-  .stage-style-title {
+  .style-card-title {
     font-size: calc(18 * var(--u));
   }
 
-  .stage-style-desc {
-    font-size: calc(12 * var(--u));
+  .style-card-desc {
+    font-size: calc(12.5 * var(--u));
+    line-height: 1.45;
   }
 
-  .stage-book-btn {
+  .style-book-cta {
     width: 100%;
     justify-content: space-between;
-    height: calc(40 * var(--u));
-    padding: 0 calc(16 * var(--u));
+    height: calc(42 * var(--u));
+    padding: 0 calc(18 * var(--u));
+    font-size: calc(13 * var(--u));
   }
 
   .hallway-selector-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: calc(10 * var(--u));
-    margin-top: calc(14 * var(--u));
+    gap: calc(8 * var(--u));
+    margin-top: calc(10 * var(--u));
   }
 
   .hallway-tab-card {
-    padding: calc(14 * var(--u));
+    padding: calc(10 * var(--u)) calc(12 * var(--u));
+    border-radius: calc(8 * var(--u));
+    gap: calc(4 * var(--u));
+  }
+
+  .tab-card-top {
+    font-size: calc(9.5 * var(--u));
   }
 
   .tab-card-title {
-    font-size: calc(13.5 * var(--u));
+    font-size: calc(12 * var(--u));
+    line-height: 1.25;
   }
 
   .service-floating-lens,

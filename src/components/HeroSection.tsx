@@ -266,11 +266,17 @@ export default function HeroSection({
         heroSectionRef.current.querySelectorAll<HTMLElement>(".hero-stagger")
       );
       staggerItems.forEach((el, idx) => {
+        const isCenteredPlate =
+          el.classList.contains("brand-plate") ||
+          el.classList.contains("jacket-wordmarks");
+
         el.animate(
-          [
-            { transform: "translateY(14px)", opacity: 0 },
-            { transform: "translateY(0px)", opacity: 1 },
-          ],
+          isCenteredPlate
+            ? [{ opacity: 0 }, { opacity: 1 }]
+            : [
+                { transform: "translateY(14px)", opacity: 0 },
+                { transform: "translateY(0px)", opacity: 1 },
+              ],
           {
             duration: 850,
             delay: 140 + idx * 55,

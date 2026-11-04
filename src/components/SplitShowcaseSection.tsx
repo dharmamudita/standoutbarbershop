@@ -235,7 +235,7 @@ export default function SplitShowcaseSection({
               if (e.touches[0]) updateSliderFromClientX(e.touches[0].clientX);
             }}
             onMouseMove={(e) => {
-              if (!isDraggingSlider && window.innerWidth > 900) {
+              if (!isDraggingSlider && window.innerWidth > 1024) {
                 updateSliderFromClientX(e.clientX);
               }
             }}
@@ -250,7 +250,7 @@ export default function SplitShowcaseSection({
                 className="split-compare-img img-after-grade"
               />
               <div className="split-corner-badge badge-right">
-                <span>HASIL AKHIR · HIGH CONTRAST</span>
+                <span className="badge-kicker">HASIL AKHIR</span>
                 <strong>{currentStyle.durationSpec}</strong>
               </div>
             </div>
@@ -272,7 +272,7 @@ export default function SplitShowcaseSection({
               {/* Architectural measurement grid overlay on left split */}
               <div className="blueprint-grid-overlay" aria-hidden="true" />
               <div className="split-corner-badge badge-left">
-                <span>ANALISIS STRUKTUR</span>
+                <span className="badge-kicker">STRUKTUR AWAL</span>
                 <strong>{currentStyle.angleSpec}</strong>
               </div>
             </div>
@@ -287,33 +287,40 @@ export default function SplitShowcaseSection({
                 <span>↔</span>
               </div>
               <div className="split-coord-readout">
-                SPLIT {Math.round(splitSliderPos)}%
+                ‹ GESER {Math.round(splitSliderPos)}% ›
               </div>
-            </div>
-
-            {/* Bottom Caption Bar inside Hallway Stage */}
-            <div className="hallway-stage-caption">
-              <div className="stage-caption-left">
-                <span className="stage-code-pill">
-                  ARSIP {currentStyle.code} / 04
-                </span>
-                <h3 className="stage-style-title">{currentStyle.title}</h3>
-                <p className="stage-style-desc">{currentStyle.subtitle}</p>
-              </div>
-              <button
-                type="button"
-                className="stage-book-btn"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onOpenBooking("Signature Standout Cut");
-                }}
-              >
-                <span>Pesan Gaya Ini</span>
-                <span aria-hidden="true">↗</span>
-              </button>
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Dedicated Style Card (Below Photo for 100% Unobstructed Hairstyle View) */}
+      <div className="hallway-style-card">
+        <div className="style-card-left">
+          <div className="style-card-meta">
+            <span className="style-archive-pill">
+              ARSIP {currentStyle.code} / 04
+            </span>
+            <span className="style-spec-tag">
+              {currentStyle.angleSpec} · {currentStyle.durationSpec}
+            </span>
+          </div>
+          <h3 className="style-card-title">{currentStyle.title}</h3>
+          <p className="style-card-desc">{currentStyle.subtitle}</p>
+        </div>
+        <button
+          type="button"
+          className="style-book-cta rolling-btn"
+          onClick={() => onOpenBooking(currentStyle.title)}
+          aria-label={`Reservasi Potongan ${currentStyle.title}`}
+        >
+          <span className="rolling-label" data-text="Pesan Gaya Ini">
+            <span>Pesan Gaya Ini</span>
+          </span>
+          <span className="arrow-ic" aria-hidden="true">
+            ↗
+          </span>
+        </button>
       </div>
 
       {/* 4 Interactive Corridor Style Selector Cards below the Hallway */}
