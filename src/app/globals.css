@@ -301,7 +301,7 @@ img {
 /* Brand plate over the man's back in translucent Royal Blue glass */
 .brand-plate {
   position: absolute;
-  left: 50%;
+  left: calc(50% + 45 * var(--u));
   top: calc(530 * var(--u));
   transform: translateX(-50%);
   width: calc(364 * var(--u));
@@ -387,7 +387,7 @@ img {
 /* Jacket row of editorial wordmarks */
 .jacket-wordmarks {
   position: absolute;
-  left: 50%;
+  left: calc(50% + 45 * var(--u));
   bottom: calc(52 * var(--u));
   transform: translateX(-50%);
   display: flex;
