@@ -143,6 +143,7 @@ img {
 
 .hero-nav {
   position: relative;
+  left: calc(-85 * var(--u));
   height: calc(48 * var(--u));
   background: var(--brand-blue-tint);
   border: 1px solid var(--hairline-14);
@@ -174,11 +175,11 @@ img {
   position: relative;
   z-index: 1;
   height: calc(38 * var(--u));
-  padding: 0 calc(20 * var(--u));
+  padding: 0 calc(17 * var(--u));
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(13.5 * var(--u));
+  font-size: calc(13.2 * var(--u));
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--ink);
@@ -1956,6 +1957,7 @@ img {
   /* Row 2: Full-Width Centered Sliding Nav Pill (Zero Collision) */
   .hero-nav {
     order: 3;
+    left: 0;
     width: 100%;
     max-width: 100%;
     height: calc(44 * var(--u));
