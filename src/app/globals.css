@@ -1871,16 +1871,16 @@ img {
 }
 
 /* ==========================================
-   MOBILE & TABLET RESPONSIVE LAYOUT (<= 900px)
-   Clean, Ordered, Structured Single-Column Stack
+   MOBILE & TABLET RESPONSIVE LAYOUT (<= 1024px)
+   Clean, Two-Tier Header & Structured Single-Column Stack
    ========================================== */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   :root {
     --u: min(calc(100vw / 390), 1.45px);
   }
 
   .artboard {
-    max-width: 540px;
+    max-width: 600px;
     margin: 0 auto;
   }
 
@@ -1899,27 +1899,73 @@ img {
     display: contents;
   }
 
-  /* ORDER 1: Top Navigation + Square Arrow Button */
+  /* ORDER 1: Top Bar with Two-Tier Layout (Row 1: Logo & Hubungi CTA, Row 2: Centered Nav Pill) */
   .hero-top-bar {
     order: 1;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: calc(8 * var(--u));
+    row-gap: calc(14 * var(--u));
+    column-gap: calc(12 * var(--u));
   }
 
+  /* Row 1 Left: Brand Logo */
   .hero-brand-wrap {
+    order: 1;
+    display: flex;
+    align-items: center;
     flex-shrink: 0;
   }
 
+  /* Row 1 Right: Hubungi Kami Button */
+  .hero-top-right {
+    order: 2;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .hero-date {
+    display: none;
+  }
+
+  .hero-contact-btn {
+    width: auto;
+    height: calc(40 * var(--u));
+    padding: 0 calc(18 * var(--u));
+    border-radius: calc(999 * var(--u));
+    font-size: calc(12.5 * var(--u));
+    display: inline-flex;
+    align-items: center;
+    gap: calc(6 * var(--u));
+    flex-shrink: 0;
+    box-shadow: 0 calc(6 * var(--u)) calc(16 * var(--u)) rgba(26, 58, 163, 0.2);
+  }
+
+  .hero-contact-btn .btn-text {
+    display: inline-block !important;
+    font-size: calc(12.5 * var(--u));
+  }
+
+  .hero-contact-btn .arrow-ic {
+    font-size: calc(13 * var(--u));
+  }
+
+  /* Row 2: Full-Width Centered Sliding Nav Pill (Zero Collision) */
   .hero-nav {
-    height: calc(42 * var(--u));
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+    height: calc(44 * var(--u));
     padding: calc(3.5 * var(--u));
-    flex: 1;
-    max-width: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     overflow-x: auto;
     scrollbar-width: none;
+    box-shadow: 0 calc(6 * var(--u)) calc(20 * var(--u)) rgba(26, 58, 163, 0.05);
   }
 
   .hero-nav::-webkit-scrollbar {
@@ -1929,33 +1975,16 @@ img {
   .nav-pill-indicator {
     top: calc(3.5 * var(--u));
     left: calc(3.5 * var(--u));
-    height: calc(33 * var(--u));
+    height: calc(37 * var(--u));
   }
 
   .nav-link {
-    height: calc(33 * var(--u));
-    padding: 0 calc(11.5 * var(--u));
-    font-size: calc(12 * var(--u));
-  }
-
-  .hero-date {
-    display: none;
-  }
-
-  .hero-contact-btn {
-    width: calc(42 * var(--u));
-    height: calc(42 * var(--u));
-    padding: 0;
-    border-radius: calc(12 * var(--u));
-    flex-shrink: 0;
-  }
-
-  .hero-contact-btn .btn-text {
-    display: none;
-  }
-
-  .hero-contact-btn .arrow-ic {
-    font-size: calc(15 * var(--u));
+    flex: 1;
+    height: calc(37 * var(--u));
+    padding: 0 calc(8 * var(--u));
+    font-size: calc(12.5 * var(--u));
+    text-align: center;
+    justify-content: center;
   }
 
   /* ORDER 2: Title (GAYA / PRESISI) + (TENTANG KAMI) + Pesan Kursi CTA */
@@ -3105,7 +3134,7 @@ img {
   color: #ffffff;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .kinetic-band {
     height: calc(44 * var(--u));
     font-size: calc(12 * var(--u));

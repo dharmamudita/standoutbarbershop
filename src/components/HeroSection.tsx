@@ -201,15 +201,20 @@ export default function HeroSection({
       if (!navEl || !targetLink) return;
       const navRect = navEl.getBoundingClientRect();
       const linkRect = targetLink.getBoundingClientRect();
+      const isMobile = window.innerWidth <= 1024;
       setPillStyle({
         width: linkRect.width,
-        left: linkRect.left - navRect.left - 4,
+        left: linkRect.left - navRect.left - (isMobile ? 3.5 : 4),
       });
     };
 
     updatePill();
+    const tId = window.setTimeout(updatePill, 60);
     window.addEventListener("resize", updatePill);
-    return () => window.removeEventListener("resize", updatePill);
+    return () => {
+      window.clearTimeout(tId);
+      window.removeEventListener("resize", updatePill);
+    };
   }, [currentPillIndex]);
 
   // Web Animations API load choreography
@@ -318,7 +323,7 @@ export default function HeroSection({
 
   // Subtle pointer depth on the frosted STANDOUT brand plate (desktop)
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>): void => {
-    if (prefersReducedMotion || window.innerWidth <= 900) return;
+    if (prefersReducedMotion || window.innerWidth <= 1024) return;
     const heroEl = heroSectionRef.current;
     const plateEl = brandPlateRef.current;
     if (!heroEl || !plateEl) return;
@@ -332,7 +337,7 @@ export default function HeroSection({
   };
 
   const handleMouseLeave = (): void => {
-    if (brandPlateRef.current && window.innerWidth > 900) {
+    if (brandPlateRef.current && window.innerWidth > 1024) {
       brandPlateRef.current.style.transform = "translateX(-50%)";
     }
   };
@@ -349,12 +354,7 @@ export default function HeroSection({
         {/* 1. Top Bar: Brand Logo on Left, Segmented Nav, Date + Contact CTA on Right */}
         <header className="hero-top-bar">
           <div className="hero-brand-wrap hero-stagger">
-            <div className="hidden sm:block">
-              <StandoutLogo variant="horizontal" size={40} withLink />
-            </div>
-            <div className="block sm:hidden">
-              <StandoutLogo variant="emblem" size={36} withLink />
-            </div>
+            <StandoutLogo variant="horizontal" size={38} withLink />
           </div>
 
           <nav
