@@ -1,9 +1,13 @@
 import os
-from PIL import Image, ImageOps, ImageDraw, ImageFont
 import base64
+try:
+    from PIL import Image, ImageOps, ImageDraw, ImageFont  # type: ignore
+except ImportError:
+    import sys
+    print("Pillow tidak terinstall. Jalankan: pip install pillow")
+    sys.exit(0)
 
 os.makedirs("public", exist_ok=True)
-os.makedirs("src/app", exist_ok=True)
 
 # 1. Load original logo and crop
 orig = Image.open("logostandout.png")
@@ -191,7 +195,7 @@ try:
     font_med = ImageFont.truetype("arialbd.ttf", 26)
     font_small = ImageFont.truetype("arial.ttf", 21)
     font_badge = ImageFont.truetype("arialbd.ttf", 15)
-except:
+except Exception:
     font_large = ImageFont.load_default()
     font_med = ImageFont.load_default()
     font_small = ImageFont.load_default()

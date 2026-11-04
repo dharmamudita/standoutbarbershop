@@ -1,9 +1,13 @@
 import os
 import math
-from PIL import Image, ImageDraw, ImageFont
+try:
+    from PIL import Image, ImageDraw, ImageFont  # type: ignore
+except ImportError:
+    import sys
+    print("Pillow tidak terinstall.")
+    sys.exit(0)
 
 os.makedirs("public", exist_ok=True)
-os.makedirs("src/app", exist_ok=True)
 
 # -------------------------------------------------------------
 # 1. CREATE SVG ICONS (Vector for browser tab, address bar, search)
@@ -298,7 +302,7 @@ try:
     font_med = ImageFont.truetype("arialbd.ttf", 26)
     font_small = ImageFont.truetype("arial.ttf", 22)
     font_badge = ImageFont.truetype("arialbd.ttf", 16)
-except:
+except Exception:
     font_large = ImageFont.load_default()
     font_med = ImageFont.load_default()
     font_small = ImageFont.load_default()
