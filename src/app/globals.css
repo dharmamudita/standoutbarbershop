@@ -2387,14 +2387,14 @@ img {
 
   .brand-plate {
     top: 50%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    transform: translateY(-50%);
-    width: calc(100% - 44 * var(--u));
-    max-width: calc(280 * var(--u));
-    height: calc(52 * var(--u));
-    padding: 0 calc(16 * var(--u));
+    left: 50%;
+    right: auto;
+    margin: 0;
+    transform: translate(-50%, -50%) !important;
+    width: calc(100% - 36 * var(--u));
+    max-width: calc(260 * var(--u));
+    height: calc(48 * var(--u));
+    padding: 0 calc(14 * var(--u));
     border-radius: calc(10 * var(--u));
     background: rgba(26, 58, 163, 0.88);
     backdrop-filter: blur(14px) saturate(140%);
@@ -2403,9 +2403,29 @@ img {
     z-index: 6;
   }
 
+  .brand-plate-mark img,
+  .brand-plate-mark svg {
+    width: calc(22 * var(--u));
+    height: calc(22 * var(--u));
+  }
+
   .brand-plate-name {
-    font-size: calc(16 * var(--u));
+    font-size: calc(15 * var(--u));
     letter-spacing: 0.05em;
+  }
+
+  .brand-plate-menu {
+    width: calc(22 * var(--u));
+    height: calc(22 * var(--u));
+    gap: calc(4 * var(--u));
+  }
+
+  .brand-plate-menu span:first-child {
+    width: calc(16 * var(--u));
+  }
+
+  .brand-plate-menu span:last-child {
+    width: calc(10 * var(--u));
   }
 
   .jacket-wordmarks {

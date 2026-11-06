@@ -343,10 +343,20 @@ export default function HeroSection({
   };
 
   const handleMouseLeave = (): void => {
-    if (brandPlateRef.current && window.innerWidth > 1024) {
-      brandPlateRef.current.style.transform = "translateX(-50%)";
+    if (brandPlateRef.current) {
+      brandPlateRef.current.style.transform = "";
     }
   };
+
+  useEffect(() => {
+    const handleResize = (): void => {
+      if (brandPlateRef.current && window.innerWidth <= 1024) {
+        brandPlateRef.current.style.transform = "";
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className="hero-surface" id="home">
