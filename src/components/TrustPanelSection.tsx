@@ -187,8 +187,18 @@ export default function TrustPanelSection({
             </div>
           </article>
 
-          {/* Card 2: Awards Card (#262626, 295u) */}
-          <article ref={awardsCardRef} className="trust-card awards-card">
+          {/* Card 2: Awards Card with Ambient Studio Video 1 Backdrop */}
+          <article ref={awardsCardRef} className="trust-card awards-card" aria-label="Penghargaan dan Standar Keahlian">
+            <video
+              src="/video1.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="awards-bg-video"
+              aria-hidden="true"
+            />
             <div className="awards-top">
               <div className="awards-num">{count10}+</div>
               <div className="awards-label">Standar Keahlian &amp; Penghargaan</div>
