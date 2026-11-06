@@ -19,11 +19,15 @@ export interface PartnerMarkItem {
 
 export interface ServiceItem {
   id: string;
+  category?: "haircut" | "treatment";
   indexLabel: string;
   name: string;
+  subtitle?: string;
   description: string;
   duration: string;
   priceLabel: string;
+  badge?: string;
+  isPopular?: boolean;
 }
 
 export interface StudioHourItem {
@@ -42,6 +46,7 @@ export interface BookingFormData {
 export interface StudioMetadata {
   brandName: string;
   shortName: string;
+  tagline?: string;
   establishedYear: string;
   cityCode: string;
   cityFull: string;
@@ -51,6 +56,8 @@ export interface StudioMetadata {
   whatsappDisplay: string;
   instagramHandle: string;
   instagramUrl: string;
+  tiktokHandle?: string;
+  tiktokUrl?: string;
   googleMapsUrl: string;
   openHourWib: number;
   closeHourWib: number;

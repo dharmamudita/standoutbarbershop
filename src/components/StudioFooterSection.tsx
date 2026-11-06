@@ -37,14 +37,26 @@ export default function StudioFooterSection({
                   <span>{wibStatus.statusLabel}</span>
                 </span>
               </div>
-              <a
-                href={STUDIO_META.instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="studio-ig-handle"
-              >
-                {STUDIO_META.instagramHandle} ↗
-              </a>
+              <div className="flex items-center gap-2.5 flex-wrap">
+                <a
+                  href={STUDIO_META.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="studio-ig-handle"
+                >
+                  IG {STUDIO_META.instagramHandle} ↗
+                </a>
+                {STUDIO_META.tiktokUrl && (
+                  <a
+                    href={STUDIO_META.tiktokUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="studio-ig-handle"
+                  >
+                    TikTok {STUDIO_META.tiktokHandle} ↗
+                  </a>
+                )}
+              </div>
             </div>
 
             <h2 className="studio-headline">

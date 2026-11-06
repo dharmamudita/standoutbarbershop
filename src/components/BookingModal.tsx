@@ -119,12 +119,24 @@ export default function BookingModal({
               value={serviceName}
               onChange={(e) => setServiceName(e.target.value)}
             >
-              {GROOMING_SERVICES.map((svc, idx) => (
-                <option key={svc.id} value={svc.name}>
-                  {String(idx + 1).padStart(2, "0")} — {svc.name} ({svc.duration}{" "}
-                  · {svc.priceLabel})
-                </option>
-              ))}
+              <optgroup label="SPECIAL HAIRCUT">
+                {GROOMING_SERVICES.filter((s) => s.category === "haircut").map(
+                  (svc) => (
+                    <option key={svc.id} value={svc.name}>
+                      {svc.name} ({svc.priceLabel})
+                    </option>
+                  )
+                )}
+              </optgroup>
+              <optgroup label="SPECIAL TREATMENTS (*All Treatment Free Haircut)">
+                {GROOMING_SERVICES.filter((s) => s.category === "treatment").map(
+                  (svc) => (
+                    <option key={svc.id} value={svc.name}>
+                      {svc.name} ({svc.priceLabel}) — Free Haircut
+                    </option>
+                  )
+                )}
+              </optgroup>
             </select>
           </div>
 

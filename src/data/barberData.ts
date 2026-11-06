@@ -9,6 +9,7 @@ import {
 export const STUDIO_META: StudioMetadata = {
   brandName: "STANDOUT BARBERSHOP",
   shortName: "STANDOUT",
+  tagline: "Ready to Serve You with Our Best Service",
   establishedYear: "2019",
   cityCode: "BDL",
   cityFull: "Bandar Lampung",
@@ -19,6 +20,8 @@ export const STUDIO_META: StudioMetadata = {
   whatsappDisplay: "0822-4646-4426",
   instagramHandle: "@standout_barber",
   instagramUrl: "https://www.instagram.com/standout_barber/",
+  tiktokHandle: "@standout_barber",
+  tiktokUrl: "https://www.tiktok.com/@standout_barber",
   googleMapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Standout+Barbershop+Ruko+Bukit+Indah+Golf+Jl+Pangeran+Senopati+Blok+F9+Sukarame+Bandar+Lampung",
   openHourWib: 10,
@@ -69,50 +72,118 @@ export const MANIFESTO_STATEMENT =
   "Kami percaya penampilan terbaik lahir dari struktur yang presisi, bukan sekadar mengikuti tren sesaat. Setiap potongan dirancang untuk menegaskan karakter, meningkatkan kepercayaan diri, dan menciptakan kesan berkelas setiap hari.";
 
 export const GROOMING_SERVICES: ServiceItem[] = [
+  // 1. SPECIAL HAIRCUT
   {
-    id: "signature-cut",
-    indexLabel: "01 / 05",
-    name: "Signature Standout Cut",
+    id: "haircut-wiji",
+    category: "haircut",
+    indexLabel: "01 / 09",
+    name: "Haircut by Wiji Santoso",
+    subtitle: "Haircut & Styling",
     description:
-      "Konsultasi bentuk kepala & arah tumbuh rambut, potongan presisi (taper atau skin fade), cuci rambut menyegarkan, kompres handuk hangat, pijat bahu, dan penataan pomade/matte clay.",
-    duration: "45 MENIT",
-    priceLabel: "RP 65RB",
-  },
-  {
-    id: "executive-ritual",
-    indexLabel: "02 / 05",
-    name: "Executive Cut & Beard Ritual",
-    description:
-      "Paket lengkap potong rambut presisi dipadukan dengan perapian jenggot & kumis menggunakan pisau cukur lurus, ritual handuk panas aromaterapi, serta serum penenang kulit.",
-    duration: "60 MENIT",
-    priceLabel: "RP 90RB",
-  },
-  {
-    id: "razor-sculpt",
-    indexLabel: "03 / 05",
-    name: "Razor Line-Up & Cukur Jenggot",
-    description:
-      "Pembentukan garis rahang dan jenggot yang tajam, perapian kumis detail, kompres handuk hangat, dan aplikasi beard oil alami.",
-    duration: "25 MENIT",
-    priceLabel: "RP 35RB",
-  },
-  {
-    id: "perm-color",
-    indexLabel: "04 / 05",
-    name: "Texture Perm & Pewarnaan Rambut",
-    description:
-      "Korean wave perm, down perm untuk merapikan rambut samping yang mengembang, atau pewarnaan monokrom ash/hitam natural sesuai karakter wajah.",
-    duration: "90 MENIT",
-    priceLabel: "RP 220RB+",
-  },
-  {
-    id: "scalp-detox",
-    indexLabel: "05 / 05",
-    name: "Scalp Detox & Creambath Spa",
-    description:
-      "Eksfoliasi kulit kepala mendalam, terapi creambath dingin, pijat akupresur kepala & leher, serta hair tonic penguat akar rambut.",
+      "Potongan rambut eksklusif langsung ditangani oleh Founder / Master Barber Wiji Santoso. Termasuk analisis struktur kepala, potongan presisi, dan styling profesional.",
     duration: "40 MENIT",
-    priceLabel: "RP 55RB",
+    priceLabel: "45K",
+    badge: "Master Barber",
+    isPopular: true,
+  },
+  {
+    id: "standout-haircut",
+    category: "haircut",
+    indexLabel: "02 / 09",
+    name: "Standout Haircut",
+    subtitle: "Haircut & Styling",
+    description:
+      "Potongan rambut presisi signature Standout Barbershop oleh barber berpengalaman. Konsultasi model, fade/taper bertekstur rapi, dan styling pomade/matte clay.",
+    duration: "35 MENIT",
+    priceLabel: "40K",
+    isPopular: true,
+  },
+  {
+    id: "additional-wash-towel",
+    category: "haircut",
+    indexLabel: "03 / 09",
+    name: "Additional (Hairwash & Hot Towel)",
+    subtitle: "Hairwash & Hot Towel",
+    description:
+      "Layanan tambahan cuci rambut menyegarkan (hairwash) dipadukan dengan kompres handuk hangat (hot towel) untuk kesegaran dan kebersihan maksimal pasca potong.",
+    duration: "10 MENIT",
+    priceLabel: "5K",
+  },
+  {
+    id: "platinum-haircut",
+    category: "haircut",
+    indexLabel: "04 / 09",
+    name: "Platinum Haircut",
+    subtitle: "Haircut, Wash, Vitamin, Mask, Massage & Towel",
+    description:
+      "Paket perawatan lengkap termewah: Potongan presisi, cuci rambut (hairwash), vitamin rambut, masker rambut (hair mask), pijat rileks bahu & leher (short massage), dan kompres handuk hangat (hot towel).",
+    duration: "55 MENIT",
+    priceLabel: "85K",
+    badge: "Paket Komplit",
+    isPopular: true,
+  },
+
+  // 2. SPECIAL TREATMENTS (*All treatment free haircut)
+  {
+    id: "keratin-treatment",
+    category: "treatment",
+    indexLabel: "05 / 09",
+    name: "Keratin Treatment",
+    subtitle: "Termasuk Gratis Potong Rambut (Free Haircut)",
+    description:
+      "Perawatan keratin mendalam untuk merevitalisasi helaian rambut yang kering, megar, dan sulit diatur agar kembali halus, sehat, dan bervolume natural.",
+    duration: "90 MENIT",
+    priceLabel: "250K - 350K",
+    badge: "Free Haircut",
+  },
+  {
+    id: "platinum-smooth-keratin",
+    category: "treatment",
+    indexLabel: "06 / 09",
+    name: "Platinum Smooth Keratin",
+    subtitle: "Formula Keratin Premium · Free Haircut",
+    description:
+      "Formula keratin platinum tingkat lanjut untuk hasil pelurusan rambut ekstra halus, berkilau sehat alami, tahan lama, dan bebas kusut tanpa membuat rambut lepek.",
+    duration: "120 MENIT",
+    priceLabel: "350K - 400K",
+    badge: "Free Haircut",
+    isPopular: true,
+  },
+  {
+    id: "perming-korean-perm",
+    category: "treatment",
+    indexLabel: "07 / 09",
+    name: "Perming / Korean Perm",
+    subtitle: "Korean Wave & Texture Perm · Free Haircut",
+    description:
+      "Pengeritingan gaya modern Korea (Korean Wave) atau texture perm pria untuk menambah volume rambut, gelombang natural dinamis, dan tampilan trendy.",
+    duration: "90 MENIT",
+    priceLabel: "250K - 350K",
+    badge: "Trending · Free Haircut",
+  },
+  {
+    id: "hair-color-fashion",
+    category: "treatment",
+    indexLabel: "08 / 09",
+    name: "Hair Color Fashion",
+    subtitle: "Bleaching & Fashion Shades · Free Haircut",
+    description:
+      "Pewarnaan rambut fashion berkelas dengan teknik bleaching profesional dan pilihan warna trendi (Ash Grey, Silver, Blonde, Pastel Highlight) sesuai karakter wajah.",
+    duration: "120 MENIT",
+    priceLabel: "250K - 600K",
+    badge: "Free Haircut",
+  },
+  {
+    id: "hair-color-basic",
+    category: "treatment",
+    indexLabel: "09 / 09",
+    name: "Hair Color Basic",
+    subtitle: "Hitam Natural / Dark Brown · Free Haircut",
+    description:
+      "Pewarnaan warna dasar alami untuk menutupi uban secara menyeluruh atau mengembalikan warna hitam/cokelat gelap rambut yang segar, bersih, dan rapi.",
+    duration: "45 MENIT",
+    priceLabel: "80K",
+    badge: "Free Haircut",
   },
 ];
 
