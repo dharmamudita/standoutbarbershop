@@ -154,7 +154,7 @@ export default function TrustPanelSection({
 
           <p className="trust-copy">
             Mulai dari kalangan profesional hingga kreatif di seluruh Bandar
-            Lampung, studio Sukarame kami menghadirkan potongan rambut
+            Lampung, cabang Sukarame kami menghadirkan potongan rambut
             berstruktur rapi dan perawatan yang konsisten.
           </p>
         </div>

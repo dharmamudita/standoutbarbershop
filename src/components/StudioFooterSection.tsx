@@ -60,7 +60,7 @@ export default function StudioFooterSection({
             </div>
 
             <h2 className="studio-headline">
-              Kunjungi Studio Utama {STUDIO_META.district}
+              Kunjungi Cabang {STUDIO_META.district}
             </h2>
             <p className="studio-address">{STUDIO_META.address}</p>
           </div>

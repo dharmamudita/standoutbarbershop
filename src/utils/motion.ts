@@ -102,7 +102,7 @@ export function useWibStatus(): WibStatusInfo {
 export function buildWhatsAppBookingUrl(data: BookingFormData): string {
   const message = [
     `Halo *${STUDIO_META.brandName}* 👋`,
-    `Saya ingin melakukan reservasi kursi di studio Sukarame:`,
+    `Saya ingin melakukan reservasi kursi di cabang Sukarame:`,
     ``,
     `• *Nama:* ${data.clientName}`,
     `• *Layanan:* ${data.serviceName}`,
