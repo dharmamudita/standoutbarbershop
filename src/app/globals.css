@@ -256,34 +256,7 @@ img {
   transform: translate(2.5px, -2.5px);
 }
 
-/* 0. Absolute Background Watermark (Paling Belakang / True Ground Layer) */
-.hero-bg-watermark-layer {
-  position: absolute;
-  top: calc(90 * var(--u));
-  left: calc(50% + 25 * var(--u));
-  transform: translateX(-50%);
-  width: calc(620 * var(--u));
-  max-width: 90vw;
-  height: calc(760 * var(--u));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 0; /* Paling belakang, di bawah foto & konten */
-  pointer-events: none;
-  opacity: 0.035; /* Opasitas diturunkan sangat rendah agar samar & tidak nimpa */
-  user-select: none;
-  filter: saturate(110%);
-}
-
-.hero-watermark-emblem {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  pointer-events: none;
-}
-
-/* Center Studio Portrait Layer — Berada di depan layer watermark */
+/* Center Studio Portrait Layer — Melts seamlessly into pure #FFFFFF */
 .hero-center-stage {
   position: absolute;
   left: 50%;
@@ -291,7 +264,33 @@ img {
   transform: translateX(-50%);
   width: calc(740 * var(--u));
   height: calc(1024 * var(--u));
-  z-index: 2; /* Di depan watermark */
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Subtle Standout Logo Watermark behind Model */
+.hero-bg-watermark {
+  position: absolute;
+  top: calc(75 * var(--u));
+  left: calc(50% + 22 * var(--u));
+  transform: translateX(-50%);
+  width: calc(560 * var(--u));
+  height: calc(700 * var(--u));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.13; /* Terlihat jelas sebagai watermark latar belakang, tidak hilang dan tidak nimpa */
+  user-select: none;
+  filter: saturate(115%);
+}
+
+.hero-watermark-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
   pointer-events: none;
 }
 
@@ -300,6 +299,7 @@ img {
   z-index: 1;
   width: 100%;
   height: 100%;
+  mix-blend-mode: multiply;
   will-change: transform, opacity, filter;
   -webkit-mask-image: linear-gradient(
     to right,
@@ -324,6 +324,7 @@ img {
   object-position: center top;
   /* Lifts #dadada studio backdrop to pure #FFFFFF while keeping rich portrait contrast */
   filter: grayscale(100%) brightness(1.17) contrast(1.12);
+  mix-blend-mode: multiply;
   will-change: transform;
 }
 
@@ -2358,13 +2359,13 @@ img {
     box-shadow: 0 calc(12 * var(--u)) calc(30 * var(--u)) rgba(26, 58, 163, 0.08);
   }
 
-  .hero-bg-watermark-layer {
-    top: calc(180 * var(--u));
+  .hero-bg-watermark {
+    top: calc(16 * var(--u));
     left: 50%;
     transform: translateX(-50%);
-    width: calc(290 * var(--u));
+    width: calc(280 * var(--u));
     height: calc(340 * var(--u));
-    opacity: 0.035;
+    opacity: 0.13;
     z-index: 0;
   }
 

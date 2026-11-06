@@ -357,17 +357,6 @@ export default function HeroSection({
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
-        {/* 0. Absolute Background Watermark (DI PALING BELAKANG) */}
-        <div className="hero-bg-watermark-layer" aria-hidden="true">
-          <img
-            src="/logo-emblem.png"
-            alt=""
-            className="hero-watermark-emblem"
-            width={783}
-            height={968}
-          />
-        </div>
-
         {/* 1. Top Bar: Brand Logo on Left, Segmented Nav, Date + Contact CTA on Right */}
         <header className="hero-top-bar">
           <div className="hero-brand-wrap hero-stagger">
@@ -434,6 +423,17 @@ export default function HeroSection({
 
         {/* 2. Center Studio Portrait + Brand Plate + Jacket Wordmarks */}
         <div className="hero-center-stage">
+          {/* Subtle Standout Logo Watermark Background behind Model */}
+          <div className="hero-bg-watermark" aria-hidden="true">
+            <img
+              src="/logo-emblem.png"
+              alt=""
+              className="hero-watermark-img"
+              width={783}
+              height={968}
+            />
+          </div>
+
           <div ref={heroPhotoWrapRef} className="hero-photo-wrap">
             <img
               ref={heroPhotoRef}
