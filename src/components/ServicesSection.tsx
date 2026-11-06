@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { GROOMING_SERVICES, MEDIA_URLS, STUDIO_META } from "@/data/barberData";
+import { GROOMING_SERVICES, MEDIA_URLS } from "@/data/barberData";
 
 interface ServicesSectionProps {
   onSelectService: (serviceName: string) => void;
@@ -31,7 +31,6 @@ export default function ServicesSection({
 
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const [activeCategory, setActiveCategory] = useState<"all" | "haircut" | "treatment">("all");
-  const [isFlyerModalOpen, setIsFlyerModalOpen] = useState<boolean>(false);
 
   const filteredServices = GROOMING_SERVICES.filter((svc) => {
     if (activeCategory === "all") return true;
@@ -124,16 +123,6 @@ export default function ServicesSection({
     };
   }, [prefersReducedMotion]);
 
-  // Close modal on escape
-  useEffect(() => {
-    if (!isFlyerModalOpen) return;
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setIsFlyerModalOpen(false);
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isFlyerModalOpen]);
-
   return (
     <section
       ref={sectionRef}
@@ -149,22 +138,10 @@ export default function ServicesSection({
           </div>
           <h2 className="section-display-title">Menu Layanan &amp; Tarif</h2>
         </div>
-        <div className="eyebrow-right-wrapper">
-          <p className="eyebrow-right-note">
-            Setiap sesi di Standout Barbershop dirancang presisi dengan standar
-            kebersihan tinggi, konsultasi struktur kepala, serta sentuhan styling modern.
-          </p>
-          <button
-            type="button"
-            className="view-flyer-btn"
-            onClick={() => setIsFlyerModalOpen(true)}
-            aria-label="Lihat brosur price list resmi toko"
-          >
-            <span className="flyer-btn-icon" aria-hidden="true">📄</span>
-            <span>Lihat Brosur Toko</span>
-            <span aria-hidden="true">↗</span>
-          </button>
-        </div>
+        <p className="eyebrow-right-note">
+          Setiap sesi di Standout Barbershop dirancang presisi dengan standar
+          kebersihan tinggi, konsultasi struktur kepala, serta sentuhan styling modern.
+        </p>
       </div>
 
       {/* Category Filter Pills + Treatment Promo Ribbon */}
@@ -300,60 +277,6 @@ export default function ServicesSection({
           })}
         </div>
       </div>
-
-      {/* Official Flyer Lightbox Modal */}
-      {isFlyerModalOpen && (
-        <div
-          className="modal-backdrop is-open flyer-modal-backdrop"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Brosur Price List Resmi Standout Barbershop"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setIsFlyerModalOpen(false);
-          }}
-        >
-          <div className="flyer-modal-card">
-            <div className="flyer-modal-header">
-              <div>
-                <h3 className="flyer-modal-title">Brosur Price List Resmi</h3>
-                <p className="flyer-modal-sub">Standout Barbershop · {STUDIO_META.address}</p>
-              </div>
-              <button
-                type="button"
-                className="modal-close"
-                onClick={() => setIsFlyerModalOpen(false)}
-                aria-label="Tutup brosur"
-              >
-                ✕
-              </button>
-            </div>
-            <div className="flyer-modal-body">
-              <img
-                src="/price-list-standout.png"
-                alt="Standout Barbershop Official Price List"
-                className="flyer-preview-img"
-              />
-            </div>
-            <div className="flyer-modal-footer">
-              <div className="flyer-footer-contacts">
-                <span>WhatsApp: <strong>{STUDIO_META.whatsappDisplay}</strong></span>
-                <span>Instagram: <strong>{STUDIO_META.instagramHandle}</strong></span>
-              </div>
-              <button
-                type="button"
-                className="flyer-book-cta"
-                onClick={() => {
-                  setIsFlyerModalOpen(false);
-                  onSelectService(GROOMING_SERVICES[0].name);
-                }}
-              >
-                <span>Reservasi Sekarang</span>
-                <span aria-hidden="true">↗</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
