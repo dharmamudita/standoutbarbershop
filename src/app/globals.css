@@ -268,9 +268,38 @@ img {
   pointer-events: none;
 }
 
-.hero-photo-wrap {
+/* Subtle Faint Brand Logo Watermark behind Model */
+.hero-bg-watermark {
+  position: absolute;
+  top: calc(85 * var(--u));
+  left: calc(50% + 22 * var(--u));
+  transform: translateX(-50%);
+  width: calc(640 * var(--u));
+  height: calc(780 * var(--u));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.08; /* Opasitas kecil/samar sesuai permintaan */
+  user-select: none;
+  filter: saturate(120%);
+  transition: opacity 0.5s ease;
+}
+
+.hero-watermark-img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.hero-photo-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: multiply;
   will-change: transform, opacity, filter;
   -webkit-mask-image: linear-gradient(
     to right,
@@ -295,6 +324,7 @@ img {
   object-position: center top;
   /* Lifts #dadada studio backdrop to pure #FFFFFF while keeping rich portrait contrast */
   filter: grayscale(100%) brightness(1.17) contrast(1.12);
+  mix-blend-mode: multiply;
   will-change: transform;
 }
 
@@ -2327,6 +2357,16 @@ img {
     background: #f4f7ff;
     border: 1.5px solid var(--hairline-14);
     box-shadow: 0 calc(12 * var(--u)) calc(30 * var(--u)) rgba(26, 58, 163, 0.08);
+  }
+
+  .hero-bg-watermark {
+    top: calc(24 * var(--u));
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(290 * var(--u));
+    height: calc(340 * var(--u));
+    opacity: 0.08;
+    z-index: 0;
   }
 
   .hero-photo-wrap {

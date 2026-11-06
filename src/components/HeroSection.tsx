@@ -268,7 +268,8 @@ export default function HeroSection({
       staggerItems.forEach((el, idx) => {
         const isCenteredPlate =
           el.classList.contains("brand-plate") ||
-          el.classList.contains("jacket-wordmarks");
+          el.classList.contains("jacket-wordmarks") ||
+          el.classList.contains("hero-bg-watermark");
 
         el.animate(
           isCenteredPlate
@@ -423,6 +424,17 @@ export default function HeroSection({
 
         {/* 2. Center Studio Portrait + Brand Plate + Jacket Wordmarks */}
         <div className="hero-center-stage">
+          {/* Faint Standout Logo Watermark Background behind Model */}
+          <div className="hero-bg-watermark hero-stagger" aria-hidden="true">
+            <img
+              src="/logo-emblem.png"
+              alt=""
+              className="hero-watermark-img"
+              width={783}
+              height={968}
+            />
+          </div>
+
           <div ref={heroPhotoWrapRef} className="hero-photo-wrap">
             <img
               ref={heroPhotoRef}
