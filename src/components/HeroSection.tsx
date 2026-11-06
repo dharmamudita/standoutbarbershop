@@ -438,7 +438,7 @@ export default function HeroSection({
             <img
               ref={heroPhotoRef}
               className="hero-photo"
-              src={MEDIA_URLS.heroPortrait}
+              src={MEDIA_URLS.heroPortraitCutout}
               alt="Potret studio monokrom gaya rambut pria rapi dari belakang"
               fetchPriority="high"
             />

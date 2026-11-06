@@ -32,6 +32,7 @@ export const STUDIO_META: StudioMetadata = {
 export const MEDIA_URLS = {
   heroPortrait:
     "https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/7dc8b8f3-4ccb-4599-8ce4-7f7c7881bad9.webp",
+  heroPortraitCutout: "/hero-portrait-cutout.webp",
   capCardPhoto:
     "https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/a9d3641f-d629-46e5-8d2d-5f75386b803d.webp",
   qIndustrialPhoto:
