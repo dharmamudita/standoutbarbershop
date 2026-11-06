@@ -1280,6 +1280,15 @@ img {
   width: calc(260 * var(--u));
 }
 
+.video-card-1 .trust-video {
+  transform: scale(1.48);
+  transform-origin: center 55%;
+}
+
+.video-card-1:hover .trust-video {
+  transform: scale(1.55);
+}
+
 .video-card-2,
 .portrait-card {
   width: calc(210 * var(--u));
@@ -1294,8 +1303,7 @@ img {
   transition: transform 0.75s var(--ease-out-expo);
 }
 
-.video-card:hover .trust-video,
-.video-card:hover .portrait-video,
+.video-card-2:hover .trust-video,
 .portrait-card:hover .portrait-video {
   transform: scale(1.05);
 }
