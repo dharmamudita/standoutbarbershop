@@ -160,7 +160,8 @@ export const GROOMING_SERVICES: ServiceItem[] = [
       "Pengeritingan gaya modern Korea (Korean Wave) atau texture perm pria untuk menambah volume rambut, gelombang natural dinamis, dan tampilan trendy.",
     duration: "90 MENIT",
     priceLabel: "250K - 350K",
-    badge: "Trending · Free Haircut",
+    badge: "Free Haircut",
+    isPopular: true,
   },
   {
     id: "hair-color-fashion",

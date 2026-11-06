@@ -1549,7 +1549,7 @@ img {
   position: relative;
   display: grid;
   grid-template-columns:
-    calc(75 * var(--u)) 1.4fr 1.6fr calc(150 * var(--u))
+    calc(88 * var(--u)) 1.4fr 1.6fr calc(150 * var(--u))
     calc(110 * var(--u));
   align-items: center;
   gap: calc(16 * var(--u));
@@ -1587,7 +1587,9 @@ img {
 .service-idx-col {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: calc(4 * var(--u));
+  min-width: 0;
 }
 
 .service-idx {
@@ -1609,6 +1611,8 @@ img {
   padding: calc(2 * var(--u)) calc(6 * var(--u));
   border-radius: calc(999 * var(--u));
   width: max-content;
+  max-width: 100%;
+  white-space: nowrap;
   background: var(--brand-blue-soft);
   color: var(--brand-blue);
   border: 1px solid var(--hairline-20);
