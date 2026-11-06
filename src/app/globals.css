@@ -1266,98 +1266,26 @@ img {
   letter-spacing: -0.01em;
 }
 
-.awards-card {
-  width: calc(295 * var(--u));
-  background: linear-gradient(
-    160deg,
-    var(--brand-blue) 0%,
-    var(--brand-blue-deep) 100%
-  );
-  color: #ffffff;
-  padding: calc(24 * var(--u));
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 calc(16 * var(--u)) calc(36 * var(--u)) rgba(26, 58, 163, 0.22);
-  position: relative;
-  overflow: hidden;
-}
-
-.awards-bg-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.35;
-  mix-blend-mode: luminosity;
-  pointer-events: none;
-  z-index: 0;
-  transition: opacity 0.5s ease, transform 0.6s var(--ease-out-expo);
-}
-
-.awards-card:hover .awards-bg-video {
-  opacity: 0.55;
-  transform: scale(1.05);
-}
-
-.awards-top,
-.laurel-badge-wrap,
-.awards-note {
-  position: relative;
-  z-index: 1;
-}
-
-.awards-top {
-  display: flex;
-  flex-direction: column;
-  gap: calc(4 * var(--u));
-}
-
-.awards-num {
-  font-size: calc(43 * var(--u));
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: -0.035em;
-  color: #ffffff;
-}
-
-.awards-label {
-  font-size: calc(13.5 * var(--u));
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.laurel-badge-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: calc(6 * var(--u)) 0;
-}
-
-.laurel-svg {
-  width: calc(175 * var(--u));
-  height: calc(74 * var(--u));
-}
-
-.awards-note {
-  font-size: calc(12.5 * var(--u));
-  line-height: 1.44;
-  color: rgba(255, 255, 255, 0.78);
-  letter-spacing: -0.01em;
-}
-
-.portrait-card {
-  width: calc(195 * var(--u));
+.video-card {
+  height: calc(326 * var(--u));
   overflow: hidden;
   position: relative;
-  background: var(--brand-blue-soft);
+  background: #0f1523;
   border: 1px solid var(--hairline-14);
+  border-radius: calc(8 * var(--u));
+  flex-shrink: 0;
 }
 
-.portrait-card img,
-.portrait-card video,
+.video-card-1 {
+  width: calc(260 * var(--u));
+}
+
+.video-card-2,
+.portrait-card {
+  width: calc(210 * var(--u));
+}
+
+.trust-video,
 .portrait-video {
   width: 100%;
   height: 100%;
@@ -1366,40 +1294,10 @@ img {
   transition: transform 0.75s var(--ease-out-expo);
 }
 
-.portrait-card:hover img,
-.portrait-card:hover video,
+.video-card:hover .trust-video,
+.video-card:hover .portrait-video,
 .portrait-card:hover .portrait-video {
-  transform: scale(1.06);
-}
-
-.portrait-video-badge {
-  position: absolute;
-  bottom: calc(14 * var(--u));
-  left: calc(12 * var(--u));
-  display: inline-flex;
-  align-items: center;
-  gap: calc(6 * var(--u));
-  padding: calc(4 * var(--u)) calc(10 * var(--u));
-  background: rgba(15, 23, 42, 0.72);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: calc(999 * var(--u));
-  font-family: "Archivo", sans-serif;
-  font-size: calc(9.5 * var(--u));
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #ffffff;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.portrait-video-dot {
-  width: calc(6 * var(--u));
-  height: calc(6 * var(--u));
-  border-radius: 50%;
-  background: #22c55e;
-  box-shadow: 0 0 calc(8 * var(--u)) #22c55e;
+  transform: scale(1.05);
 }
 
 /* ==========================================
@@ -2556,15 +2454,10 @@ img {
     font-size: calc(36 * var(--u));
   }
 
-  .awards-card {
-    width: 100%;
-    padding: calc(20 * var(--u));
-    gap: calc(14 * var(--u));
-  }
-
+  .video-card,
   .portrait-card {
     width: 100%;
-    height: calc(220 * var(--u));
+    height: calc(230 * var(--u));
   }
 
   /* ==========================================

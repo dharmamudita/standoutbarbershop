@@ -187,8 +187,12 @@ export default function TrustPanelSection({
             </div>
           </article>
 
-          {/* Card 2: Awards Card with Ambient Studio Video 1 Backdrop */}
-          <article ref={awardsCardRef} className="trust-card awards-card" aria-label="Penghargaan dan Standar Keahlian">
+          {/* Card 2: Studio Video 1 Card (Normal clean video) */}
+          <article
+            ref={awardsCardRef}
+            className="trust-card video-card video-card-1"
+            aria-label="Cuplikan Video Studio Standout 1"
+          >
             <video
               src="/video1.mp4"
               autoPlay
@@ -196,99 +200,15 @@ export default function TrustPanelSection({
               muted
               playsInline
               preload="auto"
-              className="awards-bg-video"
-              aria-hidden="true"
+              className="trust-video"
             />
-            <div className="awards-top">
-              <div className="awards-num">{count10}+</div>
-              <div className="awards-label">Standar Keahlian &amp; Penghargaan</div>
-            </div>
-
-            <div className="laurel-badge-wrap">
-              <svg
-                className="laurel-svg"
-                viewBox="0 0 200 84"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="Penghargaan Studio Barber Pilihan 2026"
-              >
-                <path
-                  d="M48 68C30 60 20 44 22 22C26 26 31 32 32 40C28 33 27 23 31 14C35 19 38 26 38 33C36 24 38 15 44 9C46 15 47 22 45 29"
-                  stroke="white"
-                  strokeOpacity="0.75"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M48 68C38 66 29 58 26 48"
-                  stroke="white"
-                  strokeOpacity="0.5"
-                  strokeWidth="1.4"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M152 68C170 60 180 44 178 22C174 26 169 32 168 40C172 33 173 23 169 14C165 19 162 26 162 33C164 24 162 15 156 9C154 15 153 22 155 29"
-                  stroke="white"
-                  strokeOpacity="0.75"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M152 68C162 66 171 58 174 48"
-                  stroke="white"
-                  strokeOpacity="0.5"
-                  strokeWidth="1.4"
-                  strokeLinecap="round"
-                />
-                <text
-                  x="100"
-                  y="29"
-                  textAnchor="middle"
-                  fill="white"
-                  fillOpacity="0.55"
-                  fontFamily="Archivo, sans-serif"
-                  fontSize="7.5"
-                  fontWeight="600"
-                  letterSpacing="1.6"
-                >
-                  RATING 4.9★ TERBAIK
-                </text>
-                <text
-                  x="100"
-                  y="43"
-                  textAnchor="middle"
-                  fill="white"
-                  fontFamily="Archivo, sans-serif"
-                  fontSize="9.5"
-                  fontWeight="700"
-                  letterSpacing="1.2"
-                >
-                  STUDIO BARBER
-                </text>
-                <text
-                  x="100"
-                  y="56"
-                  textAnchor="middle"
-                  fill="white"
-                  fontFamily="Archivo, sans-serif"
-                  fontSize="9.5"
-                  fontWeight="700"
-                  letterSpacing="1.2"
-                >
-                  PILIHAN 2026
-                </text>
-              </svg>
-            </div>
-
-            <p className="awards-note">
-              Diakui di Bandar Lampung atas ketajaman gradasi fade serta
-              konsultasi gaya rambut yang personal.
-            </p>
           </article>
 
-          {/* Card 3: Studio Reel Video Card (replacing static photo) */}
-          <article className="trust-card portrait-card" aria-label="Cuplikan Video Studio Standout">
+          {/* Card 3: Studio Video 2 Card (Normal clean video, no badge) */}
+          <article
+            className="trust-card video-card video-card-2 portrait-card"
+            aria-label="Cuplikan Video Studio Standout 2"
+          >
             <video
               src="/video2.mp4"
               autoPlay
@@ -296,12 +216,8 @@ export default function TrustPanelSection({
               muted
               playsInline
               preload="auto"
-              className="portrait-video"
+              className="trust-video portrait-video"
             />
-            <div className="portrait-video-badge" aria-hidden="true">
-              <span className="portrait-video-dot" />
-              <span>ATMOSPHERE</span>
-            </div>
           </article>
         </div>
       </div>
