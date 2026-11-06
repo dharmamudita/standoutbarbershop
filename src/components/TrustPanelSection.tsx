@@ -277,13 +277,21 @@ export default function TrustPanelSection({
             </p>
           </article>
 
-          {/* Card 3: Portrait Card (195u, cut off by right edge) */}
-          <article className="trust-card portrait-card">
-            <img
-              src={MEDIA_URLS.sideProfilePhoto}
-              alt="Potret samping hasil cukur rambut pria"
-              loading="lazy"
+          {/* Card 3: Studio Reel Video Card (replacing static photo) */}
+          <article className="trust-card portrait-card" aria-label="Cuplikan Video Studio Standout">
+            <video
+              src="/video2.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              className="portrait-video"
             />
+            <div className="portrait-video-badge" aria-hidden="true">
+              <span className="portrait-video-dot" />
+              <span>ATMOSPHERE</span>
+            </div>
           </article>
         </div>
       </div>
